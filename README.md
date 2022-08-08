@@ -78,4 +78,5 @@ https://www.youtube.com/watch?v=zJxJerQtUdk
 
 
 
-Stand: 54:54# reactToDoApp
+Stand: 1:04:22
+

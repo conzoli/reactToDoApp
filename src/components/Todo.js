@@ -1,26 +1,32 @@
-import { isDocument } from '@testing-library/user-event/dist/utils';
-import React from 'react'
-import { useState } from 'react';
+import React from "react";
 
-const Todo = ({description, done, onChangeTodo, index}) => {
-
-  const changeTodo = () => {
-    console.log("Hallo");
-  }
-
-  
+const Todo = ({ description, done, onChangeTodo, onDeleteTodo, index }) => {
   return (
-    <div className={
-        done ? "flex justify-between p-2 items-center bg-green-600 text-white"
+    <div
+      className={
+        done
+          ? "flex justify-between p-2 items-center bg-green-600 text-white"
           : "flex justify-between p-2 items-center bg-red-500 text-white"
-        }
+      }
+    >
+      <h1
+        className="text-lg cursor-pointer"
+        onClick={() => {
+          onChangeTodo(index);
+        }}
       >
-      <h1 className="text-lg cursor-pointer" onClick={() => {onChangeTodo(index)}} >{description}</h1>
-      <button className="text-lg bg-gray-400 p-2 text-white">Löschen</button>
-    </div>    
-    
-    
-  )
-}
+        {description}
+      </h1>
+      <button
+        className="text-lg bg-gray-400 p-2 text-white"
+        onClick={() => {
+          onDeleteTodo(index);
+        }}
+      >
+        Löschen
+      </button>
+    </div>
+  );
+};
 
-export default Todo
+export default Todo;
